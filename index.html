@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex layout</title>
+    <style>
+        body {
+            margin: 0%;
+            height: 100vh;
+            background-color: #799869;
+        }
+
+        /* *{ */
+        /* border: 1px solid black; */
+        /* } */
+        /* .shadow{
+                box-shadow: 10px 10px 5px #888888;
+        } */
+        .flex {
+            display: flex;
+        }
+
+        .wheat {
+            background-color: rgb(241, 227, 199);
+        }
+
+        .flex1 {
+            flex: 1;
+        }
+
+        .column {
+            flex-direction: column;
+        }
+
+        .mg8 {
+            margin: 8px;
+        }
+
+        .mgr8 {
+            margin-right: 8px;
+        }
+
+        .mgt8 {
+            margin-top: 8px;
+        }
+
+        .nav {
+            padding: 10px 20px;
+            border-bottom: 1px solid #799869;
+            font-size: 14px;
+            color: rgb(85, 105, 49);
+        }
+
+        @media (max-width:600px) {
+            .sidebar {
+                display: none;
+            }
+
+            .content {
+                flex-direction: column;
+            }
+
+            .data {
+                flex-direction: column;
+            }
+
+            .d {
+                margin: 0 0 8px;
+                flex: auto;
+            }
+
+            .right {
+                margin-left: 8px;
+            }
+        }
+
+        .sco::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body class="flex">
+    <!-- SIDEBAR  -->
+    <div style="width: 200px; z-index: 2;" class="wheat shadow sidebar">
+        <!-- ICON  -->
+        <div style="padding: 10px; align-items: center; justify-content: center; border-bottom: 1px solid #799869;"
+            class="flex">
+            <img src="ddz.png"
+             width="40px" height="40px" alt="">
+            <div style="margin-left: 10px;"></div>
+        </div>
+        <!-- NAVIGATION  -->
+        <div class="flex1">
+            <div class="nav">na</div>
+            <div class="nav">na</div>
+            <div class="nav">na</div>
+            <div class="nav">na</div>
+            <div class="nav">na</div>
+        </div>
+    </div>
+
+    <!-- MAIN  -->
+    <div class="flex1 flex column">
+
+        <!-- HEADER  -->
+        <div style="height: 60px; z-index: 1;" class="wheat"></div>
+
+        <!-- CONTENT  -->
+        <div style="overflow: auto;" class="flex1 flex content">
+            <!-- LEFT  -->
+            <div style="flex:3" class="flex column mg8">
+
+                <!-- DATA  -->
+                <div class="flex data">
+                    <!-- d1  -->
+                    <div style="height: 100px;" class="flex1 wheat mgr8 d"></div>
+                    <div style="height: 100px;" class="flex1 wheat mgr8 d"></div>
+                    <div style="height: 100px;" class="flex1 wheat mgr8 d"></div>
+                    <div style="height: 100px;" class="flex1 wheat"></div>
+                </div>
+                <!-- list  -->
+                <div class="flex column">
+                    <!-- item  -->
+                    <div style="height: 160px" class="wheat mgt8"></div>
+                    <div style="height: 160px" class="wheat mgt8"></div>
+                    <div style="height: 160px" class="wheat mgt8"></div>
+                </div>
+            </div>
+
+            <!-- RIGHT  -->
+            <div style="flex:1" class="flex column mgr8 mgt8 right">
+                <!-- notice  -->
+                <div style="height: 150px;" class="wheat"></div>
+                <!-- message  -->
+                <div style="height: 300px;" class="wheat mgt8"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
